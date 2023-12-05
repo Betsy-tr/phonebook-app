@@ -6,6 +6,8 @@
     <title>Document</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+ 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
@@ -13,7 +15,7 @@
 
     <h2 class="ml-4 text-2xl mt-4 font-serif font-semibold text-underline">Exemples pour débutant : </h2>
 
-    <div class="flex">
+    <div class="flex row">
         
 
         <div class=" ml-4 mt-2 border border-black h-35 w-25 justify-center">
@@ -39,7 +41,7 @@
             <div x-data="{ open: false }">
             <button class="ml-4 bg-green-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-green-500/20" @click="open = ! open">Toggle</button>
     
-                <div class="ml-4" x-show="open" @click.outside="open = false">
+                <div class="ml-4" x-show="open" x-transition.duration.500ms  @click.outside="open = false">
                     <ul>
                         <li>Accueil</li>
                         <li>Service</li>
@@ -72,6 +74,12 @@
                     </template>
                 </ul>
             </div>
+        </div>
+
+        <div class=" ml-4 mt-2 border border-black">
+            <p class=" ml-4">Créer un champs qui permet de saisir une date, à l'aide de <strong>"x-mask"</strong></p>
+            <input class="ml-4 mt-2 border border-orange-500  bg-transparent" x-mask="99/99/9999" placeholder="MM/DD/YYYY">
+            
         </div>
     </div>
 
